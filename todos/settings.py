@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 # SECURE_PROXY_SSL_HEADER=('HTTP_X_FORWARDED_PROTO', 'https')
@@ -142,4 +143,6 @@ STATICFILES_DIRS =[
 ]
 
 STATIC_ROOT =os.path.join(BASE_DIR, 'assets')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
