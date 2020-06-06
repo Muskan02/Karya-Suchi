@@ -20,7 +20,10 @@ def add(request):
 		return redirect('index')
 
 def delete(request, todo_id):
-	item=Todo.objects.get(id=todo_id)
-	item.delete()
-	return redirect('index')
+	if request.method=='POST':
+		item=Todo.objects.get(id=todo_id)
+		item.delete()
+		return redirect('index')
+	else:
+		return redirect('index')
 
