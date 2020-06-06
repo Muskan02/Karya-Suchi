@@ -13,9 +13,9 @@ body{
 h1{
 	background-color: gray;
 	margin: 0;
-	padding:10px;
+	padding:20px;
 	text-transform: uppercase;
-	font-size: 36px;
+	font-size: 48px;
 	color: white;
 	font-weight: normal;
 	text-align:center;
@@ -31,10 +31,10 @@ li{
 	color: black;
 	font-family: sans-serif;
 	margin: 0;
-	padding: 5px;
-	font-size: 24px;
+	padding: 10px;
+	font-size: 36px;
 	background-color: #fff;
-	line-height: 25px;
+	line-height: 50px;
 }
 
 li:nth-child(2n){
@@ -83,7 +83,7 @@ input:focus{
 }
 
 .icon {
-  padding: 5px;
+  padding: 10px;
   background: dodgerblue;
   color: white;
   min-width: 30px;
@@ -96,7 +96,7 @@ input:focus{
   padding: 10px;
   outline: none;
   margin: 0 auto;
-  font-size: 24px;
+  font-size: 36px;
 }
 
 .input-field:focus {
