@@ -34,7 +34,7 @@ li{
 	padding: 10px;
 	font-size: 36px;
 	background-color: #fff;
-	line-height: 100px;
+	line-height: 50px;
 }
 
 li:nth-child(2n){
@@ -86,14 +86,14 @@ input:focus{
   padding: 10px;
   background: dodgerblue;
   color: white;
-  min-width: 50px;
+  min-width: 30px;
   text-align: center;
   margin: 0;
 }
 
 .input-field {
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   outline: none;
   margin: 0 auto;
   font-size: 36px;
