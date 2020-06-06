@@ -1,7 +1,7 @@
 {
 	"name":"Karya Suchi",
 	"short_name":"Karya Suchi",
-	"start_url":"index/",
+	"start_url":"index.html",
 	"display":"standalone",
 	"background_color":"steelblue",
 	"theme_color":"steelblue",

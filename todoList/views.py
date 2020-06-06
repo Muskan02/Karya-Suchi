@@ -13,7 +13,7 @@ def add(request):
 		if todo!="":
 			todoItem=Todo(title=todo)
 			todoItem.save()
-			return redirect('index')
+			return render(request, 'index.html')
 		else:
 			return redirect('index')
 	else:
@@ -23,7 +23,7 @@ def delete(request, todo_id):
 	if request.method=='POST':
 		item=Todo.objects.get(id=todo_id)
 		item.delete()
-		return redirect('index')
+		return render(request, 'index.html')
 	else:
 		return redirect('index')
 
