@@ -7,6 +7,9 @@
 
 
 var ul = document.querySelector("ul");
-ul.classList.toggle("completed");
+ul.addEventListener("click", function(){
+	ul.classList.toggle("completed");
+});
+
 
 
