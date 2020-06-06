@@ -6,10 +6,12 @@
 // });
 
 
-var ul = document.querySelector("ul");
-ul.addEventListener("click", function(){
-	ul.classList.toggle("completed");
+var li = document.querySelector("li");
+li.addEventListener("click", function(){
+	this.classList.toggle("completed");
 });
+
+
 
 
 
