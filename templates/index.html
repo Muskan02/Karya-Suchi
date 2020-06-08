@@ -19,8 +19,15 @@
 </head>
 <body>
 
-	<div id="container">
+	<div id="container" class="container">
+		<div class="toggle-container" style="float: right;">
+			<input type="checkbox" id="switch" name="theme">
+			<label for="switch">Toggle</label>
+		</div>
 		<h1>To-Do List</h1>
+			
+	
+
 	<form action="add" method="POST">
 		{% csrf_token %}
 		<div class="input-container">
@@ -54,6 +61,27 @@
 	</div>
 
 
+
 <script type="text/javascript" src="static/js/todos.js"></script>
+<script type="text/javascript">
+	var checkbox=document.querySelector('input[name=theme]');
+	checkbox.addEventListener('change', function(){
+		if(this.checked){
+			trans()
+			document.documentElement.setAttribute('data-theme','dark')
+
+		}else{
+			trans()
+			document.documentElement.setAttribute('data-theme','light')
+		}
+	})
+
+	let trans=() => {
+		document.documentElement.classList.add('transition');
+		window.setTimeout(()=>{
+				document.documentElement.classList.remove('transition')
+	},1000);
+	}
+</script>
 </body>
 </html>

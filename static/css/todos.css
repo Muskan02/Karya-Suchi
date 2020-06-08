@@ -1,93 +1,40 @@
-/*body{
-	background-color: black;
+html{
+	--bg:white;
+	--color-text:black;
 }
 
-#container{
-	
-	background-color: #f7f7f7;
-	box-shadow: 0 0 3px rgba(0,0,0,0.1);
-	
-	margin: 0;
-	padding: 0;
-	background-size: cover;
+html[data-theme='dark']{
+	--bg:black;
+	--color-text:white;
 }
-
-h1{
-	background-color: black;
-	margin: 0;
-	padding:10px;
-	text-transform: uppercase;
-	font-size: 36px;
-	color: white;
-	font-weight: normal;
-	text-align:center;
-}
-
-ul{
-	list-style:none;
-	margin: 0;
-	padding: 0;
-}
-
-li{
-	color: black;
-	font-family: sans-serif;
-	margin: 0;
-	padding: 0;
-	font-size: 24px;
-	background-color: rgba(0, 0, 0, 0.5);
-	line-height: 50px;
-}
-
-li:nth-child(2n){
-	background-color: rgba(0, 0, 0, 0.5);
-}
-
-button{
-	margin: 0;
-	padding: 0;
-	outline: none;
-	background-color: dodgerblue;
-}
-
-span{
-	color: red;
-	padding: 2px;
-	text-align: center;
-	display: inline-block;
-	float: right;
-}
-
-#delete{
-	float: right;
-}
-
-.completed {
-	color: rgb(0, 100, 0);
-	text-decoration: line-through;
-}*/
 
 body{
-	background-color: white;
+	background-color: var(--bg);
+	color: var(--color-text);
+}
+
+.container{
+	margin: 0;
+	padding: 0;
 }
 
 #container{
-	/*width: 500px;
-	margin: 100px auto;*/
-	background-color: white;
 	box-shadow: 0 0 3px rgba(0,0,0,0.1);
-	/*border: 1px solid gray;*/
+	margin: 0;
+	padding: 0;
 }
 
 h1{
-	background-color: white;
+	color: var(--color-text);
 	margin: 0;
 	padding:10px;
 	text-transform: uppercase;
 	font-size: 36px;
-	color: black;
 	font-weight: normal;
 	text-align:center;
+}
+h4{
+	color: var(--color-text);
 }
 
 ul{
@@ -97,23 +44,16 @@ ul{
 }
 
 li{
-	color: black;
+	color: var(--color-text);
 	font-family: sans-serif;
 	margin: 0;
 	padding: 20px;
 	font-size: 24px;
-	background-color: #fff;
 	line-height: 20px;
 	font-weight: normal;
 }
 
-li:nth-child(2n){
-	background-color: white;
-}
-
 span{
-	color: black;
-	/*padding: 5px;*/
 	text-align: center;
 	display: inline-block;
 	float: right;
@@ -123,19 +63,20 @@ span{
 button{
 	margin: 0;
 	padding: 0;
-	background-color: white;
 	outline: none;
 	box-shadow: none;
 	border: none;
+	background-color: var(--bg);
+	color: var(--color-text);
 }
 
 .completed {
-	color: rgb(0, 0, 0);
+	color: var(--color-text);
 	text-decoration: line-through;
 }
 
 li a{
-	color: black;
+	color: var(--color-text);
 	text-decoration: none;
 }
 
@@ -143,7 +84,48 @@ hr{
     border: 0;
     height: 2px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-    background-color: black;
+    background-color: var(--color-text);
+}
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 40px;
+	height: 20px;
+	background: grey;
+	display: block;
+	border-radius: 20px;
+	position: relative;
+	margin-right: 10px;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	left: 2px;
+	width: 25px;
+	height: 20px;
+	background: #fff;
+	border-radius: 20px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: steelblue;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-50%);
+}
+
+label:active:after {
+	width: 20px;
 }
 
 input{
@@ -151,7 +133,7 @@ input{
 }
 
 input:focus{
-	background-color: #fff;
+	background-color: white;
 	border: 2px solid #2980b9;
 	outline: none;
 }
@@ -165,8 +147,7 @@ input:focus{
 
 .icon {
   padding: 10px;
-  
-  color: black;
+  color: var(--color-text);
   min-width: 20px;
   text-align: center;
   margin: 0 auto;
@@ -175,49 +156,11 @@ input:focus{
 .input-field {
   width: 100%;
   padding: 10px;
-  outline: none;
   margin: 0 auto;
   font-size: 24px;
 }
 
 .input-field:focus {
-  border: 2px solid white;
+  border: 2px solid var(--color-text);
 }
 
-input{
-	box-sizing: border-box;
-}
-
-input:focus{
-	background-color: #000;
-	border: 2px solid #2980b9;
-	outline: none;
-}
-
-.input-container {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  width: 100%;
-  /*margin-bottom: 15px;*/
-}
-
-.icon {
-  padding: 5px;
-  background: black
-  color: white;
-  min-width: 30px;
-  text-align: center;
-  margin: 0;
-}
-
-.input-field {
-  width: 100%;
-  padding: 10px;
-  outline: none;
-  margin: 0 auto;
-  font-size: 24px;
-}
-
-.input-field:focus {
-  border: 2px solid white;
-}
