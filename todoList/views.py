@@ -5,11 +5,11 @@ from .models import Todo
 
 def index(request):
 	data=Todo.objects.all()
-	return render(request, 'index.html', {'data' : data})
+	return render(request, 'index1.html', {'data' : data})
 
 def index1(request):
 	data=Todo.objects.all()
-	return render(request, 'index.html', {'data' : data})
+	return render(request, 'index1.html', {'data' : data})
 
 def add(request):
 	if request.method=='POST':
