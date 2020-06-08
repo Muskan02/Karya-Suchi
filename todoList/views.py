@@ -8,7 +8,8 @@ def index(request):
 	return render(request, 'index.html', {'data' : data})
 
 def index1(request):
-	return redirect('index')
+	data=Todo.objects.all()
+	return render(request, 'index.html', {'data' : data})
 
 def add(request):
 	if request.method=='POST':
