@@ -112,7 +112,7 @@ li:nth-child(2n){
 }
 
 span{
-	color: red;
+	color: black;
 	/*padding: 5px;*/
 	text-align: center;
 	display: inline-block;
@@ -203,7 +203,7 @@ input:focus{
 
 .icon {
   padding: 5px;
-  background: white;
+  background: black
   color: white;
   min-width: 30px;
   text-align: center;
