@@ -4,9 +4,8 @@ from .models import Todo
 # Create your views here.
 
 def index(request):
-	return redirect(index1)
-	# data=Todo.objects.all()
-	# return render(request, 'index.html', {'data' : data})
+	data=Todo.objects.all()
+	return render(request, 'index.html', {'data' : data})
 
 def index1(request):
 	data=Todo.objects.all()
