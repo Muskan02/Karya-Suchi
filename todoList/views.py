@@ -17,29 +17,29 @@ def add(request):
 		if todo!="":
 			todoItem=Todo(title=todo)
 			todoItem.save()
-			return redirect('index1')
+			return redirect('index')
 		else:
-			return redirect('index1')
+			return redirect('index')
 	else:
-		return redirect('index1')
+		return redirect('index')
 
 def delete(request, todo_id):
 	if request.method=='POST':
 		item=Todo.objects.get(id=todo_id)
 		item.delete()
-		return redirect('index1')
+		return redirect('index')
 	else:
-		return redirect('index1')
+		return redirect('index')
 
 def completed(request, todo_id):
 	item=Todo.objects.get(id=todo_id)
 	item.completed=True;
 	item.save()
-	return redirect('index1')
+	return redirect('index')
 
 
 def notcompleted(request, todo_id):
 	item=Todo.objects.get(id=todo_id)
 	item.completed=False;
 	item.save()
-	return redirect('index1')
+	return redirect('index')
