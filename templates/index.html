@@ -25,19 +25,30 @@
 		{% csrf_token %}
 		<div class="input-container">
 	    <input class="input-field" type="text" placeholder="Add a todo.." name="todo">
-	    <button id="add" type="submit"><i class='fa fa-plus-circle fa-5x icon' id='add' aria-hidden='true'></i></button>
+	    <button id="add" type="submit"><i class='fa fa-plus-circle fa-4x icon' id='add' aria-hidden='true'></i></button>
 	    </div>
 	</form>
 
 	<ul>
 	
 	{% for items in data %}
+	{% if items.completed %}
 
 	<form action="/delete/{{ items.id }}/" method="POST">
 	{% csrf_token %}
-	<li>{{ items.title }}<button type="submit" class="btn btn-lg" style="outline: none; float: right;"><span id="delete"><i class="fa fa-trash fa-4x" id="add" aria-hidden="true"></i></span></button></li>
+	<li><a href="{% url 'notcompleted' items.id %}" class="completed">{{ items.title }}</a><button type="submit" class="btn btn-lg" style="outline: none; float: right; outline: none;"><span id="delete"><i class="fa fa-trash fa-2x" id="add" aria-hidden="true"></i></span></button></li>
+	<hr>
 	</form>
-	{% endfor%}
+
+	{% else %}
+	<form action="/delete/{{ items.id }}/" method="POST">
+	{% csrf_token %}
+	<li><a href="{% url 'completed' items.id %}">{{ items.title }}</a><button type="submit" class="btn btn-lg" style="outline: none; float: right; outline: none;"><span id="delete"><i class="fa fa-trash fa-2x" id="add" aria-hidden="true"></i></span></button></li>
+	<hr>
+	</form>
+	{% endif %}
+
+	{% endfor %}
 	
     </ul>
 	</div>

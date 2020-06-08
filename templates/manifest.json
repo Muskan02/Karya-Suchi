@@ -3,8 +3,8 @@
 	"short_name":"Karya Suchi",
 	"start_url":"index1",
 	"display":"standalone",
-	"background_color":"steelblue",
-	"theme_color":"steelblue",
+	"background_color":"black",
+	"theme_color":"black",
 	"scope": ".",
 	"description":"A To-Do List App.",
 	"icons":[

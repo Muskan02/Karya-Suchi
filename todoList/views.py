@@ -31,3 +31,15 @@ def delete(request, todo_id):
 	else:
 		return redirect('index1')
 
+def completed(request, todo_id):
+	item=Todo.objects.get(id=todo_id)
+	item.completed=True;
+	item.save()
+	return redirect('index1')
+
+
+def notcompleted(request, todo_id):
+	item=Todo.objects.get(id=todo_id)
+	item.completed=False;
+	item.save()
+	return redirect('index1')
