@@ -25,17 +25,7 @@ def add(request):
 	else:
 		return redirect('index')
 
-def addtheme(request):
-	if request.method=='POST':
-		t=request.POST['theme']
-		if t!="":
-			tItem=theme(light=t)
-			tItem.save()
-			return redirect('index')
-		else:
-			return redirect('index')
-	else:
-		return redirect('index')
+
 
 def delete(request, todo_id):
 	if request.method=='POST':
