@@ -71,6 +71,13 @@
 	    <button id="add" type="submit"><i class='fa fa-plus-circle fa-4x icon' id='add' aria-hidden='true'></i></button>
 	    </div>
 	</form>
+	<form action="addtheme" method="POST">
+		{% csrf_token %}
+		<div class="input-container">
+	    <input class="input-field" type="text" placeholder="Add theme" name="theme">
+	    <button id="add" type="submit"><i class='fa fa-plus-circle fa-4x icon' id='add' aria-hidden='true'></i></button>
+	    </div>
+	</form>
 
 	<ul>
 	
