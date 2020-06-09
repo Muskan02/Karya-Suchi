@@ -7,3 +7,6 @@ class Todo(models.Model):
 
     def __str__(self):
     	return self.title + ' | ' + str(self.completed)
+
+class theme(models.Model):
+	light = models.BooleanField(default=True)

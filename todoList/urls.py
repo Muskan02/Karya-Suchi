@@ -10,4 +10,6 @@ urlpatterns = [
 	path('delete/<int:todo_id>/', views.delete, name='delete'),
 	path('completed/<int:todo_id>/', views.completed, name='completed'),
 	path('notcompleted/<int:todo_id>/', views.notcompleted, name='notcompleted'),
+	path('lighttheme/<int:tt_id>/', views.lighttheme, name='lighttheme'),
+	path('darktheme/<int:tt_id>/', views.darktheme, name='darktheme'),
 ]
