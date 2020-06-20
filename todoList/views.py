@@ -7,7 +7,10 @@ from .models import theme
 
 
 def index(request):
-	return render(request, 'index.html')
+	message=None
+	if 'message' in request.session:
+		message=request.session.get('message')
+	return render(request, 'index.html',{'message':message})
 
 def signup(request):
 	if request.method=='POST':
@@ -56,7 +59,7 @@ def signin(request):
 
 		if user is not None:
 			auth.login(request,user)
-			request.session['message']="session for {}".format(user.username)
+			request.session['message']="Log in as {}".format(user.username)
 			return  redirect('welcome')
 		else:
 			error.append('Invalid credentials.')
