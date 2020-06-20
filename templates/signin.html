@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="static/css/login.css">
+</head>
+<body>
+
+	<div id="error" class="container" style="display: none; margin-top:25px; margin-left: 25%; margin-right: 25%;">
+			<div class="alert alert-danger alert-dismissible fade show row" >
+				<div class="col-md-12">
+		          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		          	<strong><h1>Warning!</h1></strong>
+			      	<ol>
+			          {% for i in warning %}
+			          <li>{{i}}</li>
+			          {% endfor %}
+			      	</ol>
+		      	</div>
+		    </div>
+			</div>
+			
+    <div class="login">
+  <div class="login-triangle"></div>
+  
+  <h2 class="login-header">Login</h2>
+
+	 <form action="signin" method="POST" class="login-container">
+	 	{% csrf_token %}
+    <p><input type="text" placeholder="Username" name="username"></p>
+    <p><input type="password" placeholder="Password" name="password"></p>
+    <p><input type="submit" value="Let's Go"></p>
+  </form>
+</div>
+</div>
+	</div>
+			</div>
+
+<script type="text/javascript">
+	error = document.getElementById("error");
+	{% if warning %}
+		error.style.display ='block';
+	{% endif %}
+</script>
+
+</body>
+</html>

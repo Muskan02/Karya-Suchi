@@ -1,0 +1,149 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+{% for tt in t %}
+		{% if tt.light %}
+<html>
+{% else %}
+<html class="theme">
+{% endif %}
+{% endfor %}
+<head>
+	<title>Todo List</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<!-- Add icon library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="static/css/todos.css">
+	<!-- <script type="text/javascript" src="static/js/lib/jquery-3.5.1.min.js"></script> -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<link rel="manifest" href="manifest.json">
+
+</head>
+<body>
+	<!-- Loading square for squar.red network -->
+	<!-- <input type="checkbox" id="switch" name="theme" checked> -->
+			<!-- <label for="switch">Toggle</label> -->
+
+			<!-- {% if message %}
+			<h4>{{message}}</h4>
+			{% endif %} -->
+
+			<div class="loader-wrapper">
+				<span class="loader"><span class="loader-inner"></span></span>
+			</div>
+	
+		
+		
+	
+
+
+
+	
+
+		{% for tt in t %}
+		{% if tt.light %}
+		
+			
+			
+			
+			
+			
+			<a href="{% url 'darktheme' tt.id  %}">Change theme</a>
+		
+			
+			
+		
+		{% else %}
+		
+		
+			
+			
+			
+			<a href="{% url 'lighttheme' tt.id %}">Change theme</a>
+			
+			
+			
+		
+		{% endif %}
+		{% endfor %}</a>
+				</li>
+			</ul>	
+		</div>
+	
+	
+	<div id="container">
+
+	<h1>To-Do List</h1>
+	<form action="add" method="POST">
+		{% csrf_token %}
+		<div class="input-container">
+	    <input class="input-field" type="text" placeholder="Add a todo.." name="todo">
+	    <button id="add" type="submit"><i class='fa fa-plus-circle fa-4x icon' id='add' aria-hidden='true'></i></button>
+	    </div>
+	</form>
+
+	<ul>
+	
+	{% for items in data %}
+	{% if items.completed %}
+
+	<form action="/delete/{{ items.id }}/" method="POST">
+	{% csrf_token %}
+	<li class="list"><a href="{% url 'notcompleted' items.id %}" class="completed">{{ items.title }}</a><button type="submit" class="btn btn-lg" style="outline: none; float: right; outline: none;"><span id="delete"><i class="fa fa-trash fa-2x" id="add" aria-hidden="true"></i></span></button></li>
+	<hr>
+	</form>
+
+	{% else %}
+	<form action="/delete/{{ items.id }}/" method="POST">
+	{% csrf_token %}
+	<li class="list"><a href="{% url 'completed' items.id %}">{{ items.title }}</a><button type="submit" class="btn btn-lg" style="outline: none; float: right; outline: none;"><span id="delete"><i class="fa fa-trash fa-2x" id="add" aria-hidden="true"></i></span></button></li>
+	<hr>
+	</form>
+	{% endif %}
+
+	{% endfor %}
+	
+    </ul>
+	</div>
+
+
+
+<script type="text/javascript" src="static/js/todos.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+			$(document).scroll(function(){
+				var $nav=$("#mainNavbar");
+				$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+			});
+		});
+	$(window).on("load",function(){
+		$(".loader-wrapper").fadeOut("slow")
+	});
+
+</script>
+<!-- <script type="text/javascript">
+	var checkbox=document.querySelector('input[name=theme]');
+	checkbox.addEventListener('change', function(){
+		if(this.checked){
+			trans()
+			document.documentElement.setAttribute('data-theme','dark')
+
+		}else{
+			trans()
+			document.documentElement.setAttribute('data-theme','light')
+		}
+	})
+
+	let trans=() => {
+		document.documentElement.classList.add('transition');
+		window.setTimeout(()=>{
+				document.documentElement.classList.remove('transition')
+	},1000);
+	}
+</script> -->
+</body>
+</html>
