@@ -7,6 +7,12 @@ html{
 	--bg:black;
 	--color-text:white;
 }*/
+.navbar-toggler:focus,
+.nvanbar-toggler:active,
+.nvanbar-toggler-icon:focus{
+  outline: none;
+  box-shadow: none;
+}
 
 .theme{
 	--bg:black;

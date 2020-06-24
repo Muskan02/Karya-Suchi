@@ -26,6 +26,7 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarLinks">
 			<ul class="navbar-nav ml-auto">
+
 				<li class="nav-item">
 					<a href="signin" class="nav-link">Login</a>
 				</li>
@@ -35,16 +36,38 @@
 			</ul>	
 		</div>
 	</nav>
+	<div class="w3container">
+	  <div class="w3row">
+	  	{% if message %}
+	  	<div class="w3column">
+	      <div class="w3card">
+	        <h3>Log in as {{message}}</h3>
+	        <p>Your todos are saved here.</p>
+	        <button class="btn btn-lg btn-primary"><a href="welcome">Let's Go</a></button>
+	      </div>
+	      </div>
+	    {% endif %}
+	    <div class="w3column">
+	    
+	      <div class="w3card">
+	        <h3>Sign Up</h3>
+	        <p>New here? Register from here.</p>
+	        <button class="btn btn-lg btn-primary"><a href="signup">Register</a></button>
+	      </div>
 
-	
-	<div class="container" style=" margin:0; margin-top: 150px; width: 100%;">
-		<h1 style="color: purple; text-align: center; font-size: 30px; margin-bottom: 10%; text-transform: uppercase;">To-Do List</h1>
-		<button class="btn btn-lg btn-secondary" style="background-color: orange; margin-left: 30%; margin-bottom: 10%;"><a href="signup" style="color: yellow; width: 100%;">Register</button><br>
-			<button class="btn btn-lg btn-primary" style="background-color: purple; margin-left: 30%; margin-bottom: 10%;"><a href="signin" style="color: pink; width: 100%;">Login</button>
-				<button class="btn btn-lg btn-default" style="background-color: green; margin-left: 30%; margin-bottom: 10%;"><a href="welcome" style="color: orange; width: 100%;">{{message}}</button>
-
-
-	</div>
+	    </div>
+	  
+	    <div class="w3column">
+	  
+	      <div class="w3card">
+	        <h3>Login</h3>
+	        <p>Existing user login from here.</p>
+	        <button class="btn btn-lg btn-primary"><a href="signin">Login</a></button>
+	      </div>
+	 
+	    </div>
+	  </div>
+	  </div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>

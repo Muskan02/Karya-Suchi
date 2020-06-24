@@ -7,6 +7,7 @@ urlpatterns = [
 	path('index', views.index, name='index'),
 	path('signup', views.signup, name='signup'),
 	path('signin', views.signin, name='signin'),
+	path('signout', views.signout, name='signout'),
 	path('welcome', views.welcome, name='welcome'),
 	path('add', views.add, name='add'),
 	path('delete/<int:todo_id>/', views.delete, name='delete'),

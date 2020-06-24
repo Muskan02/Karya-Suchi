@@ -59,7 +59,7 @@ def signin(request):
 
 		if user is not None:
 			auth.login(request,user)
-			request.session['message']="Log in as {}".format(user.username)
+			request.session['message']="{}".format(user.username)
 			return  redirect('welcome')
 		else:
 			error.append('Invalid credentials.')
@@ -71,8 +71,9 @@ def signin(request):
 
 
 def signout(request):
+	request.session['is_logged'] = False
 	auth.logout(request)
-	return redirect('/')	
+	return render(request,'index.html')	
 
 def welcome(request):
 	message=None

@@ -23,6 +23,28 @@
 
 </head>
 <body>
+	<nav class=" navbar navbar-light bg-light navbar-expand-md py-0 fixed-top" id="mainNavbar">
+		<a class="navbar-brand">tOdO
+	    </a>
+	    {% if message %}
+				
+					<a class="nav-link">Hii, {{message}}</a>
+				
+				{% endif %}
+		<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarLinks" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon" style="outline: none; color: transparent;"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarLinks">
+			<ul class="navbar-nav ml-auto">
+				
+					<a href="signout" class="nav-link">Logout</a><br>
+			
+				
+					<a href="index" class="nav-link">Exit</a>
+			
+			</ul>	
+		</div>
+	</nav>
 	<!-- Loading square for squar.red network -->
 	<!-- <input type="checkbox" id="switch" name="theme" checked> -->
 			<!-- <label for="switch">Toggle</label> -->
@@ -110,7 +132,7 @@
 	</div>
 
 
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="static/js/todos.js"></script>
 <script type="text/javascript">
 
