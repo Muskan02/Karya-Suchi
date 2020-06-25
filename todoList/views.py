@@ -10,7 +10,12 @@ def index(request):
 	message=None
 	if 'message' in request.session:
 		message=request.session.get('message')
-	return render(request, 'index.html',{'message':message})
+	else:
+		return render(request,'index.html')
+	log_user=request.user
+	data=Todo.objects.filter(user=log_user)
+	t=theme.objects.all()
+	return render(request, 'welcome.html', {'data' : data, 't' : t, 'message':message})
 
 def signup(request):
 	if request.method=='POST':
