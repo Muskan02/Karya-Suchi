@@ -18,61 +18,75 @@ def index(request):
 	return render(request, 'welcome.html', {'data' : data, 't' : t, 'message':message})
 
 def signup(request):
-	if request.method=='POST':
-		error=[]
-		username=request.POST['username']
-		pass1=request.POST['pass1']
-
-		if(User.objects.filter(username=username).exists()):
-			error.append('Username is taken.')
-			username=""
-		elif(username==""):
-			error.append('Username cannot be empty.')
-			username=""
-		elif(username.isalnum()==False):
-			error.append('Username must contain only letters and alphabets.')
-			username=""
-		elif(len(username)<4 or len(username)>10):
-			error.append('Username should conatin atleast 4 and atmost 10 characters.')
-			username=""
-
-		if(pass1==""):
-			error.append('Password cannot be empty')
-		elif(len(pass1)<4):
-			error.append('Password should be atleast 4 characters long.')
-
-		if(len(error)>0):
-			return render(request, 'signup.html', {'warning':error})
-
-			
-		user=User.objects.create_user(username=username, password=pass1)
-		user.save();
-		return redirect('signin')
-		
+	message=None
+	if 'message' in request.session:
+		message=request.session.get('message')
+		log_user=request.user
+		data=Todo.objects.filter(user=log_user)
+		t=theme.objects.all()
+		return render(request, 'welcome.html', {'data' : data, 't' : t, 'message':message})
 	else:
-		return render(request, 'signup.html')
+		if request.method=='POST':
+			error=[]
+			username=request.POST['username']
+			pass1=request.POST['pass1']
+
+			if(User.objects.filter(username=username).exists()):
+				error.append('Username is taken.')
+				username=""
+			elif(username==""):
+				error.append('Username cannot be empty.')
+				username=""
+			elif(username.isalnum()==False):
+				error.append('Username must contain only letters and alphabets.')
+				username=""
+			elif(len(username)<4 or len(username)>10):
+				error.append('Username should conatin atleast 4 and atmost 10 characters.')
+				username=""
+
+			if(pass1==""):
+				error.append('Password cannot be empty')
+			elif(len(pass1)<4):
+				error.append('Password should be atleast 4 characters long.')
+
+			if(len(error)>0):
+				return render(request, 'signup.html', {'warning':error})
+
+				
+			user=User.objects.create_user(username=username, password=pass1)
+			user.save();
+			return redirect('signin')
+			
+		else:
+			return render(request, 'signup.html')
 		
 
 
 def signin(request):
-	if request.method=='POST':
-		username=request.POST['username']
-		password=request.POST['password']
-		error=[]
-
-		user=auth.authenticate(username=username, password=password)
-
-		if user is not None:
-			auth.login(request,user)
-			request.session['message']="{}".format(user.username)
-			return  redirect('welcome')
-		else:
-			error.append('Invalid credentials.')
-			return render(request,'signin.html',{'warning':error})
-
-
+	message=None
+	if 'message' in request.session:
+		message=request.session.get('message')
+		log_user=request.user
+		data=Todo.objects.filter(user=log_user)
+		t=theme.objects.all()
+		return render(request, 'welcome.html', {'data' : data, 't' : t, 'message':message})
 	else:
-		return render(request, 'signin.html')
+		if request.method=='POST':
+				username=request.POST['username']
+				password=request.POST['password']
+				error=[]
+
+				user=auth.authenticate(username=username, password=password)
+
+				if user is not None:
+					auth.login(request,user)
+					request.session['message']="{}".format(user.username)
+					return  redirect('welcome')
+				else:
+					error.append('Invalid credentials.')
+					return render(request,'signin.html',{'warning':error})
+		else:
+			return render(request, 'signin.html')
 
 
 def signout(request):
@@ -84,10 +98,14 @@ def welcome(request):
 	message=None
 	if 'message' in request.session:
 		message=request.session.get('message')
-	log_user=request.user
-	data=Todo.objects.filter(user=log_user)
-	t=theme.objects.all()
-	return render(request, 'welcome.html', {'data' : data, 't' : t, 'message':message})
+		log_user=request.user
+		data=Todo.objects.filter(user=log_user)
+		t=theme.objects.all()
+		return render(request, 'welcome.html', {'data' : data, 't' : t, 'message':message})
+	else:
+		if request.method!='POST':
+			return render(request, 'signin.html')
+
 
 def add(request):
 	if request.method=='POST':

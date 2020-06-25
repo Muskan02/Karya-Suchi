@@ -39,7 +39,7 @@
 					<a class="nav-link">Hii, {{message}}</a>
 				
 				{% endif %}
-		<!-- <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarLinks" aria-label="Toggle navigation">
+		<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarLinks" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon" style="outline: none; color: transparent;"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarLinks">
@@ -47,11 +47,8 @@
 				
 					<a href="signout" class="nav-link">Logout</a><br>
 			
-				
-					<a href="index" class="nav-link">Exit</a>
-			
 			</ul>	
-		</div> -->
+		</div>
 	</nav>
 	<!-- Loading square for squar.red network -->
 	<!-- <input type="checkbox" id="switch" name="theme" checked> -->
@@ -111,7 +108,8 @@
 		{% csrf_token %}
 		<div class="input-container">
 	    <input class="input-field" type="text" placeholder="Add a todo.." name="todo">
-	    <button id="add" type="submit"><i class='fa fa-plus-circle fa-4x icon' id='add' aria-hidden='true'></i></button>
+	    <!-- <button id="add" class="add" type="submit"><i class='fa fa-plus-circle fa-4x icon add' aria-hidden='true'></i></button> -->
+	    <button type="submit" class="btn btn-lg" style="outline: none; float: right; outline: none;"><span id="delete"><i class="fa fa-plus-circle fa-4x icon" id="add" aria-hidden="true"></i></span></button>
 	    </div>
 	</form>
 
