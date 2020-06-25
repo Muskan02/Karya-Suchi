@@ -36,7 +36,7 @@
 	    </a>
 	    {% if message %}
 				
-					<a class="nav-link">Hii, {{message}}</a>
+					<a class="nav-link" style="color: black;">Hii, {{message}}</a>
 				
 				{% endif %}
 		<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarLinks" aria-label="Toggle navigation">
@@ -44,10 +44,16 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarLinks">
 			<ul class="navbar-nav ml-auto">
-				
-					<a href="signout" class="nav-link">Logout</a><br>
-			
-			</ul>	
+				{% for tt in t %}
+		{% if tt.light %}
+			<a href="{% url 'darktheme' tt.id  %}" class="nav-link">Change theme</a>
+		{% else %}
+			<a href="{% url 'lighttheme' tt.id %}" class="nav-link">Change theme</a>
+		{% endif %}
+		{% endfor %}
+					<a href="signout" class="nav-link">Logout</a>
+	</ul>
+	
 		</div>
 	</nav>
 	<!-- Loading square for squar.red network -->
@@ -70,32 +76,7 @@
 
 	
 
-		{% for tt in t %}
-		{% if tt.light %}
-		
-			
-			
-			
-			
-			
-			<a href="{% url 'darktheme' tt.id  %}">Change theme</a>
-		
-			
-			
-		
-		{% else %}
-		
-		
-			
-			
-			
-			<a href="{% url 'lighttheme' tt.id %}">Change theme</a>
-			
-			
-			
-		
-		{% endif %}
-		{% endfor %}</a>
+		</a>
 				</li>
 			</ul>	
 		</div>

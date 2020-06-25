@@ -14,7 +14,7 @@ def index(request):
 		return render(request,'index.html')
 	log_user=request.user
 	data=Todo.objects.filter(user=log_user)
-	t=theme.objects.all()
+	t=theme.objects.filter(user=log_user)
 	return render(request, 'welcome.html', {'data' : data, 't' : t, 'message':message})
 
 def signup(request):
@@ -23,7 +23,7 @@ def signup(request):
 		message=request.session.get('message')
 		log_user=request.user
 		data=Todo.objects.filter(user=log_user)
-		t=theme.objects.all()
+		t=theme.objects.filter(user=log_user)
 		return render(request, 'welcome.html', {'data' : data, 't' : t, 'message':message})
 	else:
 		if request.method=='POST':
@@ -68,7 +68,7 @@ def signin(request):
 		message=request.session.get('message')
 		log_user=request.user
 		data=Todo.objects.filter(user=log_user)
-		t=theme.objects.all()
+		t=theme.objects.filter(user=log_user)
 		return render(request, 'welcome.html', {'data' : data, 't' : t, 'message':message})
 	else:
 		if request.method=='POST':
@@ -81,6 +81,12 @@ def signin(request):
 				if user is not None:
 					auth.login(request,user)
 					request.session['message']="{}".format(user.username)
+					t=theme.objects.filter(user=request.user)
+					if t:
+						pass
+					else:
+						t=theme(light=True, user=request.user)
+						t.save()
 					return  redirect('welcome')
 				else:
 					error.append('Invalid credentials.')
@@ -100,7 +106,7 @@ def welcome(request):
 		message=request.session.get('message')
 		log_user=request.user
 		data=Todo.objects.filter(user=log_user)
-		t=theme.objects.all()
+		t=theme.objects.filter(user=log_user)
 		return render(request, 'welcome.html', {'data' : data, 't' : t, 'message':message})
 	else:
 		if request.method!='POST':

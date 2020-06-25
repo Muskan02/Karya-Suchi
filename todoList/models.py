@@ -12,3 +12,5 @@ class Todo(models.Model):
 
 class theme(models.Model):
 	light = models.BooleanField(default=True)
+	user=models.ForeignKey(User, on_delete=models.CASCADE,)
+
