@@ -26,7 +26,7 @@ PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'static/js', 'serviceworker.js'
 SECRET_KEY = 'dc921b79292fd244a62e42fbf1fc8fa9cf70f9bdf5878ce1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['mytodoawesomeapp.herokuapp.com']
