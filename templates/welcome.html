@@ -120,14 +120,14 @@
 
 	<form action="/delete/{{ items.id }}/" method="POST">
 	{% csrf_token %}
-	<li class="list"><a href="{% url 'notcompleted' items.id %}" class="completed">{{ items.title }}</a><button type="submit" class="btn btn-lg" style="outline: none; float: right; outline: none;"><span id="delete"><i class="fa fa-trash fa-2x" id="add" aria-hidden="true"></i></span></button></li>
+	<li class="list"><a href="{% url 'notcompleted' items.id %}" class="completed">{{ items.title }}</a><button type="submit"  style="outline: none; float: right; outline: none;"><span id="delete"><i class="fa fa-trash fa-2x" id="add" aria-hidden="true"></i></span></button></li>
 	<hr>
 	</form>
 
 	{% else %}
 	<form action="/delete/{{ items.id }}/" method="POST">
 	{% csrf_token %}
-	<li class="list"><a href="{% url 'completed' items.id %}">{{ items.title }}</a><button type="submit" class="btn btn-lg" style="outline: none; float: right; outline: none;"><span id="delete"><i class="fa fa-trash fa-2x" id="add" aria-hidden="true"></i></span></button></li>
+	<li class="list"><a href="{% url 'completed' items.id %}">{{ items.title }}</a><button type="submit" style="outline: none; float: right; outline: none;"><span id="delete"><i class="fa fa-trash fa-2x" id="add" aria-hidden="true"></i></span></button></li>
 	<hr>
 	</form>
 	{% endif %}
