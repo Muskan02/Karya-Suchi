@@ -5,7 +5,6 @@ from .models import theme
 
 # Create your views here.
 
-
 def index(request):
 	message=None
 	if 'message' in request.session:

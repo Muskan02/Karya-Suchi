@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html>
 {% load pwa %}
@@ -14,8 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="static/css/login.css">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<link rel="manifest" href="manifest.json">
-	<script type="text/javascript">
-		
+	<script type="text/javascript">	
 	$(window).on("load",function(){
 		$(".loader-wrapper").fadeOut("slow")
 	});
@@ -23,8 +21,8 @@
 	{% progressive_web_app_meta %}
 </head>
 <body>
-<!--NavBar  -->
 
+	<!--start NavBar  -->
 	<nav class=" navbar navbar-light bg-light navbar-expand-md py-0 fixed-top" id="mainNavbar">
 		<a class="navbar-brand">tOdO
 	    </a>
@@ -43,46 +41,36 @@
 			</ul>	
 		</div>
 	</nav>
+	<!-- end navbar -->
+
 	<div class="loader-wrapper">
-				<span class="loader"><span class="loader-inner"></span></span>
-			</div>
+		<span class="loader"><span class="loader-inner"></span></span>
+	</div>
+
 	<div class="w3container">
 	  <div class="w3row">
-	  	<!-- {% if message %}
-	  	<div class="w3column">
-	      <div class="w3card">
-	        <h3>Log in as {{message}}</h3>
-	        <p>Your todos are saved here.</p>
-	        <button class="btn btn-lg btn-primary"><a href="welcome">Let's Go</a></button>
-	      </div>
-	      </div>
-	    {% endif %} -->
 	    <div class="w3column">
-	    
 	      <div class="w3card">
 	        <h3>Sign Up</h3>
 	        <p>New here? Register from here.</p>
 	        <button class="btn btn-lg btn-primary"><a href="signup">Register</a></button>
 	      </div>
-
 	    </div>
-	  
 	    <div class="w3column">
-	  
 	      <div class="w3card">
 	        <h3>Login</h3>
 	        <p>Existing user login from here.</p>
 	        <button class="btn btn-lg btn-primary"><a href="signin">Login</a></button>
 	      </div>
-	 
 	    </div>
 	  </div>
-	  </div>
+	</div>
 
-<nav class=" navbar navbar-light bg-light navbar-expand-md py-0 fixed-bottom" id="mainNavbar" style="margin: 0; padding: 0;">
+	<nav class=" navbar navbar-light bg-light navbar-expand-md py-0 fixed-bottom" id="mainNavbar" style="margin:0; padding: 0;">
 		<a class="navbar-brand" style="text-align: center; font-size: 0.75rem; margin: 0 auto;">by: muskan maheshwari
 	    </a>
-	</nav>	  
+	</nav>	
+	  
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -10,7 +10,6 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="static/css/login.css">
 	<script type="text/javascript">
-		
 	$(window).on("load",function(){
 		$(".loader-wrapper").fadeOut("slow")
 	});
@@ -18,10 +17,9 @@
 </head>
 <body>
 	<div class="container">
-<div id="error" class="container" style="display: none; margin-top:25px; margin-left: 25%; margin-right: 25%;">
+		<div id="error" class="container" style="display: none; margin-top:25px; margin-left: 25%; margin-right: 25%;">
 			<div class="alert alert-danger alert-dismissible fade show row" >
 				<div class="col-md-12">
-		          
 		          	<strong><h1>Warning!</h1></strong>
 			      	<ol>
 			          {% for i in warning %}
@@ -30,25 +28,23 @@
 			      	</ol>
 		      	</div>
 		    </div>
-			</div>
+		</div>
 
-<div class="loader-wrapper">
-				<span class="loader"><span class="loader-inner"></span></span>
-			</div>
+		<div class="loader-wrapper">
+			<span class="loader"><span class="loader-inner"></span></span>
+		</div>
 			
-    <div class="login">
-  <div class="login-triangle"></div>
-  
-  <h2 class="login-header">Register</h2>
-
-	 <form action="signup" method="POST" class="login-container">
-	 	{% csrf_token %}
-    <p><input type="text" placeholder="Username" name="username"></p>
-    <p><input type="password" placeholder="Password" name="pass1"></p>
-    <p><input type="submit" value="Let's Go"></p>
-  </form>
-</div>
-</div>
+        <div class="login">
+  			<div class="login-triangle"></div>
+  			<h2 class="login-header">Register</h2>
+  			<form action="signup" method="POST" class="login-container">
+			 	{% csrf_token %}
+		    <p><input type="text" placeholder="Username" name="username"></p>
+		    <p><input type="password" placeholder="Password" name="pass1"></p>
+		    <p><input type="submit" value="Let's Go"></p>
+		    </form>
+		</div>
+	</div>
 
 <script type="text/javascript">
 	error = document.getElementById("error");
