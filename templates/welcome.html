@@ -26,6 +26,9 @@
 	});
 
 </script>
+<style type="text/css">
+	
+</style>
 </head>
 <body>
 
@@ -57,12 +60,13 @@
 		<span class="loader"><span class="loader-inner"></span></span>
 	</div>
 	
+	<div id="snackbar">Input is large..</div>
 	<div id="container">
 		<h1>To-Do List</h1>
-		<form action="add" method="POST">
+		<form action="add" method="POST" onsubmit="return chk()">
 			{% csrf_token %}
 			<div class="input-container">
-		    <input class="input-field" type="text" placeholder="Add a todo.." name="todo">
+		    <input class="input-field" type="text" placeholder="Add a todo.." id="todotext" name="todo" autocomplete="off">
 		    <button type="submit" class="btn btn-medium" style="outline: none; float: right; outline: none; padding: 0;"><span id="delete"><i class="fa fa-plus-circle fa-3x icon" id="add" aria-hidden="true"></i></span></button>
 		    </div>
 		</form>
@@ -71,13 +75,13 @@
 		{% if items.completed %}
 			<form action="/delete/{{ items.id }}/" method="POST">
 			{% csrf_token %}
-			<li class="list"><a href="{% url 'notcompleted' items.id %}" class="completed">{{ items.title }}</a><button type="submit"  style="outline: none; float: right; outline: none;"><span id="delete"><i class="fa fa-trash" id="add" aria-hidden="true"></i></span></button></li>
+			<li class="list" style="overflow: hidden;"><a href="{% url 'notcompleted' items.id %}" class="completed">{{ items.title }}</a><button type="submit"  style="outline: none; float: right; outline: none;"><span id="delete"><i class="fa fa-trash" id="add" aria-hidden="true"></i></span></button></li>
 			<hr>
 			</form>
 		{% else %}
 			<form action="/delete/{{ items.id }}/" method="POST">
 			{% csrf_token %}
-			<li class="list"><a href="{% url 'completed' items.id %}">{{ items.title }}</a><button type="submit" style="outline: none; float: right; outline: none;"><span id="delete"><i class="fa fa-trash" id="add" aria-hidden="true"></i></span></button></li>
+			<li class="list" style="overflow: hidden;"><a href="{% url 'completed' items.id %}">{{ items.title }}</a><button type="submit" style="outline: none; float: right; outline: none;"><span id="delete"><i class="fa fa-trash" id="add" aria-hidden="true"></i></span></button></li>
 			<hr>
 			</form>
 		{% endif %}
@@ -87,5 +91,22 @@
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="static/js/todos.js"></script>
+<script type="text/javascript">
+	function chk(){
+	var todotext = document.getElementById("todotext").value;
+	if(todotext.length > 30)
+	{
+		var x = document.getElementById("snackbar");
+  		x.className = "show";
+  		setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+</script>
 </body>
 </html>

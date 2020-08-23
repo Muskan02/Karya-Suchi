@@ -116,7 +116,9 @@ def add(request):
 	if request.method=='POST':
 		todo=request.POST['todo']
 		if todo!="":
-			todoItem=Todo(title=todo, user=request.user)
+			res = " ".join(todo.split()) 
+			res=str(res)
+			todoItem=Todo(title=res, user=request.user)
 			todoItem.save()
 			return redirect('welcome')
 		else:
