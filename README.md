@@ -6,13 +6,13 @@ A simple Todo PWA with two elegant themes, Classy Black and Pure White.
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
-			<img src="/static/images/1.png" width="20%" height="20%" style="border:2px solid black;">
+			<img src="/static/images/1.png" width="20%" height="20%">
 		</div>
 		<div class="col-md-4">
-			<img src="/static/images/2.png" width="20%" height="20%" style="border:2px solid black;">
+			<img src="/static/images/2.png" width="20%" height="20%">
 		</div>
 		<div class="col-md-4">
-			<img src="/static/images/3.png" width="20%" height="20%" style="border:2px solid black;">
+			<img src="/static/images/3.png" width="20%" height="20%">
 		</div>
 	</div>
 </div>
@@ -20,16 +20,15 @@ A simple Todo PWA with two elegant themes, Classy Black and Pure White.
 <br/>
 <br/>
 
+Screenshots of working model
+
 <div class="container">
 	<div class="row">
-		<div class="col-md-4">
-			<img src="/static/images/4.png" width="20%" height="20%" style="border:2px solid black;">
+		<div class="col-md-6">
+			<img src="/static/images/4.png" width="20%" height="20%">
 		</div>
-		<div class="col-md-4">
-			<img src="/static/images/5.png" width="20%" height="20%" style="border:2px solid black;">
-		</div>
-		<div class="col-md-4">
-			<img src="/static/images/6.png" width="20%" height="20%" style="border:2px solid black;">
+		<div class="col-md-6">
+			<img src="/static/images/5.png" width="20%" height="20%">
 		</div>
 	</div>
 </div>
