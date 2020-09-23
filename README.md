@@ -1,35 +1,49 @@
 # Karya-Suchi
-A simple Todo App with two elegant themes, Classy Black and Pure White.
-
+A simple Todo PWA with two elegant themes, Classy Black and Pure White.
 
 <img src="/static/images/icon-192x192.png" alt="Karya Suchi">
 
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
-			<img src="/static/images/1.png">
+			<img src="/static/images/1.png" width="20%" height="20%" style="border:2px solid black;">
 		</div>
 		<div class="col-md-4">
-			<img src="/static/images/2.png">
+			<img src="/static/images/2.png" width="20%" height="20%" style="border:2px solid black;">
 		</div>
 		<div class="col-md-4">
-			<img src="/static/images/3.png">
+			<img src="/static/images/3.png" width="20%" height="20%" style="border:2px solid black;">
 		</div>
 	</div>
 </div>
+
+<br/>
+<br/>
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-6">
-			<img src="/static/images/4.png">
+		<div class="col-md-4">
+			<img src="/static/images/4.png" width="20%" height="20%" style="border:2px solid black;">
 		</div>
-		<div class="col-md-6">
-			<img src="/static/images/5.png">
+		<div class="col-md-4">
+			<img src="/static/images/5.png" width="20%" height="20%" style="border:2px solid black;">
+		</div>
+		<div class="col-md-4">
+			<img src="/static/images/6.png" width="20%" height="20%" style="border:2px solid black;">
 		</div>
 	</div>
 </div>
 
-<img src="/static/images/6.png">
+<br/>
+</br>
+
+<div>
+	 <p><a href="https://mytodoawesomeapp.herokuapp.com/" target="_blank">Live Web Application</a></p>
+	 <a href="css/images/Karya_Suchi_base.apk" target="_blank"><button class="btn skill" style="background-color: #5900b3; color: white;">Download APK</button></a>
+</div>
+
+
+
 
 
 
