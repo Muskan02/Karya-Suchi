@@ -1,6 +1,6 @@
 # Karya-Suchi
 ![](https://img.shields.io/badge/Code-Django-informational?style=flat&logo=django&logoColor=white&color=4AB197)
-[![Website](https://img.shields.io/website-up-down-green-red/https/perso.crans.org.svg)](https://mytodoawesomeapp.herokuapp.com/)
+[![](https://img.shields.io/badge/Website-up-informational?style=flat&logo=web&logoColor=white&color=348754)](https://mytodoawesomeapp.herokuapp.com/)
 [![](https://img.shields.io/badge/Download-APK-informational?style=flat&logo=apk&logoColor=white&color=875676)](https://github.com/Muskan02/Karya-Suchi/blob/master/css/images/Karya_Suchi_base.apk)
 
 
