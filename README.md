@@ -1,45 +1,22 @@
 # Karya-Suchi
-A simple Todo PWA with two elegant themes, Classy Black and Pure White.
+![](https://img.shields.io/badge/Code-Django-informational?style=flat&logo=django&logoColor=white&color=4AB197)
+[![Website](https://img.shields.io/website-up-down-green-red/https/perso.crans.org.svg)](https://mytodoawesomeapp.herokuapp.com/)
+[![](https://img.shields.io/badge/Download-APK-informational?style=flat&logo=apk&logoColor=white&color=875676)](https://github.com/Muskan02/Karya-Suchi/blob/master/css/images/Karya_Suchi_base.apk)
 
-<img src="/static/images/icon-192x192.png" alt="Karya Suchi">
 
-<div class="container">
-	<div class="row">
-		<div class="col-md-4">
-			<img src="/static/images/1.png" width="20%" height="20%">
-		</div>
-		<div class="col-md-4">
-			<img src="/static/images/2.png" width="20%" height="20%">
-		</div>
-		<div class="col-md-4">
-			<img src="/static/images/3.png" width="20%" height="20%">
-		</div>
-	</div>
-</div>
+### A simple Todo PWA with two elegant themes, Classy Black and Pure White. It is supported on both desktop and mobile.
 
-<br/>
-<br/>
+<img src="/static/images/1.png" width="20%" height="20%"/> <img src="/static/images/2.png" width="20%" height="20%"/> <img src="/static/images/3.png" width="20%" height="20%"/><br>
 
-Screenshots of working model
+## 2 Themes 
+### Mobile View
+<img src="/static/images/4.png" width="20%" height="20%"/> <img src="/static/images/5.png" width="20%" height="20%"/>
 
-<div class="container">
-	<div class="row">
-		<div class="col-md-6">
-			<img src="/static/images/4.png" width="20%" height="20%">
-		</div>
-		<div class="col-md-6">
-			<img src="/static/images/5.png" width="20%" height="20%">
-		</div>
-	</div>
-</div>
+### Desktop View
+<img src="/static/images/7.jpeg" width="45%" height="30%"/> <img src="/static/images/8.jpeg" width="45%" height="30%"/>
 
-<br/>
-</br>
+ 
 
-<div>
-	 <p><a href="https://mytodoawesomeapp.herokuapp.com/" target="_blank">Live Web Application</a></p>
-	 <a href="css/images/Karya_Suchi_base.apk" target="_blank"><button class="btn skill" style="background-color: #5900b3; color: white;">Download APK</button></a>
-</div>
 
 
 
