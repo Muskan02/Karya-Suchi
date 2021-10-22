@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/Download-APK-informational?style=flat&logo=apk&logoColor=white&color=875676)](https://github.com/Muskan02/Karya-Suchi/blob/master/css/images/Karya_Suchi_base.apk)
 
 
-### A simple Todo PWA with two elegant themes, Classy Black and Pure White. It is supported on both desktop and mobile.
+### A simple Todo PWA(Progressive Web App) with two elegant themes, Classy Black and Pure White. It is supported on both desktop and mobile.
 
 <img src="/static/images/1.png" width="20%" height="20%"/> <img src="/static/images/2.png" width="20%" height="20%"/> <img src="/static/images/3.png" width="20%" height="20%"/><br>
 
